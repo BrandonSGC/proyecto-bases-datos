@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace proyecto_bases_datos
 {
-    public partial class Form1 : Form
+    public partial class frmPrincipal : Form
     {
-        public Form1()
+        public frmPrincipal()
         {
             InitializeComponent();
+        }
+
+        private void btnIngresarCV_Click(object sender, EventArgs e)
+        {
+            frmIngresarCV frmPantalla = new frmIngresarCV();
+            frmPantalla.Show();
+            this.Hide();
         }
     }
 }
