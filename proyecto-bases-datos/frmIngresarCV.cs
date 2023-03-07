@@ -73,10 +73,28 @@ namespace proyecto_bases_datos
                     candidato.Fecha_aplicacion = datos[1].ToString();
                 }
                 cont += 1;
+            }            
+
+            // Guardamos el candidato en la base de datos
+            string sql = $"INSERT INTO candidato (cedula, nombre, apellidos, fecha_nacimiento, fecha_aplicacion) VALUES ({candidato.Cedula}, '{candidato.Nombre}', '{candidato.Apellidos}', '{candidato.Fecha_nacimiento}', '{candidato.Fecha_aplicacion}')";
+            MySqlConnection conexionBD = Conexion.conexion();
+            conexionBD.Open();
+            try
+            {
+                MySqlCommand comando = new MySqlCommand(sql, conexionBD);
+
+                // Ejecutamos el comando.
+                comando.ExecuteNonQuery(); 
+                MessageBox.Show("El candidato ha sido guardado con éxito!");
             }
-
-            //MessageBox.Show($"Candidato:\nNombre: {candidato.Nombre}\nApellidos: {candidato.Apellidos}\nCedula: {candidato.Cedula}\nFecha Nacimiento: {candidato.Fecha_nacimiento}\nFecha Aplicacion: {candidato.Fecha_aplicacion}\n");
-
+            catch (MySqlException ex)
+            {
+                MessageBox.Show($"Error al Guardar: {ex}");
+            }
+            finally
+            {
+                conexionBD.Close();
+            }
             app.Quit();
         }
     }
