@@ -13,6 +13,36 @@ namespace proyecto_bases_datos
         private string descripcion;
         private string requisitos;        
         private float salario;
+        
+        public string NombreEmpresa
+        {
+            get { return nombre_empresa; }
+            set { nombre_empresa = value; }
+        }
+
+        public string NombrePuesto
+        {
+            get { return nombre_puesto; }
+            set { nombre_puesto = value; }
+        }
+
+        public string Descripcion
+        {
+            get { return descripcion; }
+            set { descripcion = value; }
+        }
+
+        public string Requisitos
+        {
+            get { return requisitos; }
+            set { requisitos = value; }
+        }
+
+        public float Salario
+        {
+            get { return salario; }
+            set { salario = value; }
+        }
 
         public Vacante(string nombre_empresa, string nombre_puesto, string descripcion, string requisitos, float salario)
         {            
