@@ -23,5 +23,12 @@ namespace proyecto_bases_datos
             frmPantalla.Show();
             this.Hide();
         }
+
+        private void btnNuevaVacante_Click(object sender, EventArgs e)
+        {
+            frmCrearVacante frmPantalla = new frmCrearVacante();
+            frmPantalla.Show(); 
+            this.Hide();
+        }
     }
 }
