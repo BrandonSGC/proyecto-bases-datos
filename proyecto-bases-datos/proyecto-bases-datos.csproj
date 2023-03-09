@@ -70,6 +70,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Puesto.cs" />
     <EmbeddedResource Include="frmIngresarCV.resx">
       <DependentUpon>frmIngresarCV.cs</DependentUpon>
     </EmbeddedResource>
