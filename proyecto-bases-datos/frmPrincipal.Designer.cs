@@ -30,53 +30,53 @@
         {
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.btnNuevaVacante = new System.Windows.Forms.Button();
+            this.btnMantenimientoVacantes = new System.Windows.Forms.Button();
             this.btnMostrarCandidatos = new System.Windows.Forms.Button();
             this.btnIngresarCV = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(524, 396);
+            this.button5.Location = new System.Drawing.Point(507, 383);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(127, 33);
+            this.button5.Size = new System.Drawing.Size(176, 44);
             this.button5.TabIndex = 9;
             this.button5.Text = "button5";
             this.button5.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(524, 357);
+            this.button4.Location = new System.Drawing.Point(507, 333);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(127, 33);
+            this.button4.Size = new System.Drawing.Size(176, 44);
             this.button4.TabIndex = 8;
             this.button4.Text = "button4";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // btnNuevaVacante
+            // btnMantenimientoVacantes
             // 
-            this.btnNuevaVacante.Location = new System.Drawing.Point(524, 318);
-            this.btnNuevaVacante.Name = "btnNuevaVacante";
-            this.btnNuevaVacante.Size = new System.Drawing.Size(127, 33);
-            this.btnNuevaVacante.TabIndex = 7;
-            this.btnNuevaVacante.Text = "Crear Vacante";
-            this.btnNuevaVacante.UseVisualStyleBackColor = true;
-            this.btnNuevaVacante.Click += new System.EventHandler(this.btnNuevaVacante_Click);
+            this.btnMantenimientoVacantes.Location = new System.Drawing.Point(507, 283);
+            this.btnMantenimientoVacantes.Name = "btnMantenimientoVacantes";
+            this.btnMantenimientoVacantes.Size = new System.Drawing.Size(176, 44);
+            this.btnMantenimientoVacantes.TabIndex = 7;
+            this.btnMantenimientoVacantes.Text = "Mantenimiento Vacantes";
+            this.btnMantenimientoVacantes.UseVisualStyleBackColor = true;
+            this.btnMantenimientoVacantes.Click += new System.EventHandler(this.btnNuevaVacante_Click);
             // 
             // btnMostrarCandidatos
             // 
-            this.btnMostrarCandidatos.Location = new System.Drawing.Point(524, 279);
+            this.btnMostrarCandidatos.Location = new System.Drawing.Point(507, 233);
             this.btnMostrarCandidatos.Name = "btnMostrarCandidatos";
-            this.btnMostrarCandidatos.Size = new System.Drawing.Size(127, 33);
+            this.btnMostrarCandidatos.Size = new System.Drawing.Size(176, 44);
             this.btnMostrarCandidatos.TabIndex = 6;
             this.btnMostrarCandidatos.Text = "Mostrar candidatos";
             this.btnMostrarCandidatos.UseVisualStyleBackColor = true;
             // 
             // btnIngresarCV
             // 
-            this.btnIngresarCV.Location = new System.Drawing.Point(524, 240);
+            this.btnIngresarCV.Location = new System.Drawing.Point(507, 183);
             this.btnIngresarCV.Name = "btnIngresarCV";
-            this.btnIngresarCV.Size = new System.Drawing.Size(127, 33);
+            this.btnIngresarCV.Size = new System.Drawing.Size(176, 44);
             this.btnIngresarCV.TabIndex = 5;
             this.btnIngresarCV.Text = "Ingresar CV";
             this.btnIngresarCV.UseVisualStyleBackColor = true;
@@ -89,7 +89,7 @@
             this.ClientSize = new System.Drawing.Size(1202, 675);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.btnNuevaVacante);
+            this.Controls.Add(this.btnMantenimientoVacantes);
             this.Controls.Add(this.btnMostrarCandidatos);
             this.Controls.Add(this.btnIngresarCV);
             this.Name = "frmPrincipal";
@@ -103,7 +103,7 @@
 
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button btnNuevaVacante;
+        private System.Windows.Forms.Button btnMantenimientoVacantes;
         private System.Windows.Forms.Button btnMostrarCandidatos;
         private System.Windows.Forms.Button btnIngresarCV;
     }

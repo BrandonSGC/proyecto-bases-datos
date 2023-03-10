@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblNombreEmpresa = new System.Windows.Forms.Label();
-            this.txtNombreEmpresa = new System.Windows.Forms.TextBox();
             this.txtPuesto = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnBuscarVacante = new System.Windows.Forms.Button();
+            this.btnEliminarVacante = new System.Windows.Forms.Button();
+            this.btnModificarVacante = new System.Windows.Forms.Button();
             this.btnCrearVacante = new System.Windows.Forms.Button();
             this.txtSalario = new System.Windows.Forms.TextBox();
             this.lblSalario = new System.Windows.Forms.Label();
@@ -39,105 +40,149 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtNombreEmpresa = new System.Windows.Forms.TextBox();
+            this.lblNombreEmpresa = new System.Windows.Forms.Label();
+            this.btnLimpiarCampos = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // lblNombreEmpresa
-            // 
-            this.lblNombreEmpresa.AutoSize = true;
-            this.lblNombreEmpresa.Location = new System.Drawing.Point(345, 105);
-            this.lblNombreEmpresa.Name = "lblNombreEmpresa";
-            this.lblNombreEmpresa.Size = new System.Drawing.Size(116, 13);
-            this.lblNombreEmpresa.TabIndex = 0;
-            this.lblNombreEmpresa.Text = "Nombre de la empresa:";
-            // 
-            // txtNombreEmpresa
-            // 
-            this.txtNombreEmpresa.Location = new System.Drawing.Point(481, 98);
-            this.txtNombreEmpresa.Name = "txtNombreEmpresa";
-            this.txtNombreEmpresa.Size = new System.Drawing.Size(318, 20);
-            this.txtNombreEmpresa.TabIndex = 1;
             // 
             // txtPuesto
             // 
-            this.txtPuesto.Location = new System.Drawing.Point(481, 135);
+            this.txtPuesto.Location = new System.Drawing.Point(481, 46);
             this.txtPuesto.Name = "txtPuesto";
-            this.txtPuesto.Size = new System.Drawing.Size(124, 20);
+            this.txtPuesto.Size = new System.Drawing.Size(167, 20);
             this.txtPuesto.TabIndex = 13;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(345, 142);
+            this.label3.Location = new System.Drawing.Point(345, 53);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 13);
             this.label3.TabIndex = 12;
             this.label3.Text = "Nombre del Puesto:";
             // 
+            // btnBuscarVacante
+            // 
+            this.btnBuscarVacante.Location = new System.Drawing.Point(674, 28);
+            this.btnBuscarVacante.Name = "btnBuscarVacante";
+            this.btnBuscarVacante.Size = new System.Drawing.Size(125, 38);
+            this.btnBuscarVacante.TabIndex = 22;
+            this.btnBuscarVacante.Text = "Buscar";
+            this.btnBuscarVacante.UseVisualStyleBackColor = true;
+            this.btnBuscarVacante.Click += new System.EventHandler(this.btnBuscarVacante_Click);
+            // 
+            // btnEliminarVacante
+            // 
+            this.btnEliminarVacante.Location = new System.Drawing.Point(625, 556);
+            this.btnEliminarVacante.Name = "btnEliminarVacante";
+            this.btnEliminarVacante.Size = new System.Drawing.Size(125, 38);
+            this.btnEliminarVacante.TabIndex = 35;
+            this.btnEliminarVacante.Text = "Eliminar Vacante";
+            this.btnEliminarVacante.UseVisualStyleBackColor = true;
+            // 
+            // btnModificarVacante
+            // 
+            this.btnModificarVacante.Location = new System.Drawing.Point(461, 556);
+            this.btnModificarVacante.Name = "btnModificarVacante";
+            this.btnModificarVacante.Size = new System.Drawing.Size(125, 38);
+            this.btnModificarVacante.TabIndex = 34;
+            this.btnModificarVacante.Text = "Modificar Vacante";
+            this.btnModificarVacante.UseVisualStyleBackColor = true;
+            // 
             // btnCrearVacante
             // 
-            this.btnCrearVacante.Location = new System.Drawing.Point(552, 539);
+            this.btnCrearVacante.Location = new System.Drawing.Point(306, 556);
             this.btnCrearVacante.Name = "btnCrearVacante";
-            this.btnCrearVacante.Size = new System.Drawing.Size(144, 42);
-            this.btnCrearVacante.TabIndex = 21;
+            this.btnCrearVacante.Size = new System.Drawing.Size(125, 38);
+            this.btnCrearVacante.TabIndex = 33;
             this.btnCrearVacante.Text = "Crear Vacante";
             this.btnCrearVacante.UseVisualStyleBackColor = true;
-            this.btnCrearVacante.Click += new System.EventHandler(this.btnCrearVacante_Click);
+            this.btnCrearVacante.Click += new System.EventHandler(this.btnCrearVacante_Click_1);
             // 
             // txtSalario
             // 
-            this.txtSalario.Location = new System.Drawing.Point(481, 471);
+            this.txtSalario.Location = new System.Drawing.Point(481, 455);
             this.txtSalario.Name = "txtSalario";
             this.txtSalario.Size = new System.Drawing.Size(124, 20);
-            this.txtSalario.TabIndex = 20;
+            this.txtSalario.TabIndex = 32;
             // 
             // lblSalario
             // 
             this.lblSalario.AutoSize = true;
-            this.lblSalario.Location = new System.Drawing.Point(345, 478);
+            this.lblSalario.Location = new System.Drawing.Point(345, 462);
             this.lblSalario.Name = "lblSalario";
             this.lblSalario.Size = new System.Drawing.Size(42, 13);
-            this.lblSalario.TabIndex = 19;
+            this.lblSalario.TabIndex = 31;
             this.lblSalario.Text = "Salario:";
             // 
             // txtRequisitos
             // 
-            this.txtRequisitos.Location = new System.Drawing.Point(481, 318);
+            this.txtRequisitos.Location = new System.Drawing.Point(481, 302);
             this.txtRequisitos.Multiline = true;
             this.txtRequisitos.Name = "txtRequisitos";
             this.txtRequisitos.Size = new System.Drawing.Size(318, 110);
-            this.txtRequisitos.TabIndex = 18;
+            this.txtRequisitos.TabIndex = 30;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(345, 342);
+            this.label2.Location = new System.Drawing.Point(345, 326);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 13);
-            this.label2.TabIndex = 17;
+            this.label2.TabIndex = 29;
             this.label2.Text = "Requisitos:";
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(481, 174);
+            this.txtDescripcion.Location = new System.Drawing.Point(481, 158);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(318, 110);
-            this.txtDescripcion.TabIndex = 16;
+            this.txtDescripcion.TabIndex = 28;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(345, 198);
+            this.label1.Location = new System.Drawing.Point(345, 182);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 13);
-            this.label1.TabIndex = 15;
+            this.label1.TabIndex = 27;
             this.label1.Text = "Descripción:";
             // 
-            // frmNuevaVacante
+            // txtNombreEmpresa
+            // 
+            this.txtNombreEmpresa.Location = new System.Drawing.Point(481, 102);
+            this.txtNombreEmpresa.Name = "txtNombreEmpresa";
+            this.txtNombreEmpresa.Size = new System.Drawing.Size(318, 20);
+            this.txtNombreEmpresa.TabIndex = 26;
+            // 
+            // lblNombreEmpresa
+            // 
+            this.lblNombreEmpresa.AutoSize = true;
+            this.lblNombreEmpresa.Location = new System.Drawing.Point(345, 109);
+            this.lblNombreEmpresa.Name = "lblNombreEmpresa";
+            this.lblNombreEmpresa.Size = new System.Drawing.Size(116, 13);
+            this.lblNombreEmpresa.TabIndex = 25;
+            this.lblNombreEmpresa.Text = "Nombre de la empresa:";
+            // 
+            // btnLimpiarCampos
+            // 
+            this.btnLimpiarCampos.Location = new System.Drawing.Point(773, 556);
+            this.btnLimpiarCampos.Name = "btnLimpiarCampos";
+            this.btnLimpiarCampos.Size = new System.Drawing.Size(125, 38);
+            this.btnLimpiarCampos.TabIndex = 36;
+            this.btnLimpiarCampos.Text = "Limpiar Campos";
+            this.btnLimpiarCampos.UseVisualStyleBackColor = true;
+            this.btnLimpiarCampos.Click += new System.EventHandler(this.btnLimpiarCampos_Click);
+            // 
+            // frmCrearVacante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1202, 675);
+            this.Controls.Add(this.btnLimpiarCampos);
+            this.Controls.Add(this.btnEliminarVacante);
+            this.Controls.Add(this.btnModificarVacante);
             this.Controls.Add(this.btnCrearVacante);
             this.Controls.Add(this.txtSalario);
             this.Controls.Add(this.lblSalario);
@@ -145,11 +190,12 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtPuesto);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.txtNombreEmpresa);
             this.Controls.Add(this.lblNombreEmpresa);
-            this.Name = "frmNuevaVacante";
+            this.Controls.Add(this.btnBuscarVacante);
+            this.Controls.Add(this.txtPuesto);
+            this.Controls.Add(this.label3);
+            this.Name = "frmCrearVacante";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmNuevaVacante";
             this.Load += new System.EventHandler(this.frmNuevaVacante_Load);
@@ -159,11 +205,11 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblNombreEmpresa;
-        private System.Windows.Forms.TextBox txtNombreEmpresa;
         private System.Windows.Forms.TextBox txtPuesto;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnBuscarVacante;
+        private System.Windows.Forms.Button btnEliminarVacante;
+        private System.Windows.Forms.Button btnModificarVacante;
         private System.Windows.Forms.Button btnCrearVacante;
         private System.Windows.Forms.TextBox txtSalario;
         private System.Windows.Forms.Label lblSalario;
@@ -171,5 +217,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtNombreEmpresa;
+        private System.Windows.Forms.Label lblNombreEmpresa;
+        private System.Windows.Forms.Button btnLimpiarCampos;
     }
 }
