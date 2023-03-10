@@ -114,5 +114,34 @@ namespace proyecto_bases_datos
         {
             limpiar();
         }
+
+        private void btnEliminarVacante_Click(object sender, EventArgs e)
+        {
+            // Obtenemos el nombre del Puesto que vamos a buscar.
+            Vacante vacante = new Vacante();
+            vacante.NombrePuesto = txtPuesto.Text;
+            //Creamos la consulta
+            string sql = $"DELETE FROM vacante WHERE nombre_puesto = '{vacante.NombrePuesto}'";
+            MySqlConnection conexionBD = Conexion.conexion();
+            conexionBD.Open();
+            try
+            {    //Comado para eliminar los datos de la base de datos
+                MySqlCommand comando = new MySqlCommand(sql, conexionBD);
+                comando.Parameters.AddWithValue("@nombre_puesto", vacante);
+                int filasAfectadas = comando.ExecuteNonQuery();
+                MessageBox.Show("La vacante se ha eliminado correctamente.");
+                limpiar();
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show($"Error al Guardar: {ex}");
+            }
+            finally
+            {
+                conexionBD.Close();
+            }
+
+        }
     }
 }

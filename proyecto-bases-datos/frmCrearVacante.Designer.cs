@@ -79,6 +79,7 @@
             this.btnEliminarVacante.TabIndex = 35;
             this.btnEliminarVacante.Text = "Eliminar Vacante";
             this.btnEliminarVacante.UseVisualStyleBackColor = true;
+            this.btnEliminarVacante.Click += new System.EventHandler(this.btnEliminarVacante_Click);
             // 
             // btnModificarVacante
             // 
