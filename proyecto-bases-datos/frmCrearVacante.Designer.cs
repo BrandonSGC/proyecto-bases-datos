@@ -47,25 +47,28 @@
             // 
             // txtPuesto
             // 
-            this.txtPuesto.Location = new System.Drawing.Point(481, 46);
+            this.txtPuesto.Location = new System.Drawing.Point(641, 57);
+            this.txtPuesto.Margin = new System.Windows.Forms.Padding(4);
             this.txtPuesto.Name = "txtPuesto";
-            this.txtPuesto.Size = new System.Drawing.Size(167, 20);
+            this.txtPuesto.Size = new System.Drawing.Size(221, 22);
             this.txtPuesto.TabIndex = 13;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(345, 53);
+            this.label3.Location = new System.Drawing.Point(460, 65);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 13);
+            this.label3.Size = new System.Drawing.Size(126, 16);
             this.label3.TabIndex = 12;
             this.label3.Text = "Nombre del Puesto:";
             // 
             // btnBuscarVacante
             // 
-            this.btnBuscarVacante.Location = new System.Drawing.Point(674, 28);
+            this.btnBuscarVacante.Location = new System.Drawing.Point(899, 34);
+            this.btnBuscarVacante.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscarVacante.Name = "btnBuscarVacante";
-            this.btnBuscarVacante.Size = new System.Drawing.Size(125, 38);
+            this.btnBuscarVacante.Size = new System.Drawing.Size(167, 47);
             this.btnBuscarVacante.TabIndex = 22;
             this.btnBuscarVacante.Text = "Buscar";
             this.btnBuscarVacante.UseVisualStyleBackColor = true;
@@ -73,9 +76,10 @@
             // 
             // btnEliminarVacante
             // 
-            this.btnEliminarVacante.Location = new System.Drawing.Point(625, 556);
+            this.btnEliminarVacante.Location = new System.Drawing.Point(833, 684);
+            this.btnEliminarVacante.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminarVacante.Name = "btnEliminarVacante";
-            this.btnEliminarVacante.Size = new System.Drawing.Size(125, 38);
+            this.btnEliminarVacante.Size = new System.Drawing.Size(167, 47);
             this.btnEliminarVacante.TabIndex = 35;
             this.btnEliminarVacante.Text = "Eliminar Vacante";
             this.btnEliminarVacante.UseVisualStyleBackColor = true;
@@ -83,18 +87,21 @@
             // 
             // btnModificarVacante
             // 
-            this.btnModificarVacante.Location = new System.Drawing.Point(461, 556);
+            this.btnModificarVacante.Location = new System.Drawing.Point(615, 684);
+            this.btnModificarVacante.Margin = new System.Windows.Forms.Padding(4);
             this.btnModificarVacante.Name = "btnModificarVacante";
-            this.btnModificarVacante.Size = new System.Drawing.Size(125, 38);
+            this.btnModificarVacante.Size = new System.Drawing.Size(167, 47);
             this.btnModificarVacante.TabIndex = 34;
             this.btnModificarVacante.Text = "Modificar Vacante";
             this.btnModificarVacante.UseVisualStyleBackColor = true;
+            this.btnModificarVacante.Click += new System.EventHandler(this.btnModificarVacante_Click);
             // 
             // btnCrearVacante
             // 
-            this.btnCrearVacante.Location = new System.Drawing.Point(306, 556);
+            this.btnCrearVacante.Location = new System.Drawing.Point(408, 684);
+            this.btnCrearVacante.Margin = new System.Windows.Forms.Padding(4);
             this.btnCrearVacante.Name = "btnCrearVacante";
-            this.btnCrearVacante.Size = new System.Drawing.Size(125, 38);
+            this.btnCrearVacante.Size = new System.Drawing.Size(167, 47);
             this.btnCrearVacante.TabIndex = 33;
             this.btnCrearVacante.Text = "Crear Vacante";
             this.btnCrearVacante.UseVisualStyleBackColor = true;
@@ -102,75 +109,84 @@
             // 
             // txtSalario
             // 
-            this.txtSalario.Location = new System.Drawing.Point(481, 455);
+            this.txtSalario.Location = new System.Drawing.Point(641, 560);
+            this.txtSalario.Margin = new System.Windows.Forms.Padding(4);
             this.txtSalario.Name = "txtSalario";
-            this.txtSalario.Size = new System.Drawing.Size(124, 20);
+            this.txtSalario.Size = new System.Drawing.Size(164, 22);
             this.txtSalario.TabIndex = 32;
             // 
             // lblSalario
             // 
             this.lblSalario.AutoSize = true;
-            this.lblSalario.Location = new System.Drawing.Point(345, 462);
+            this.lblSalario.Location = new System.Drawing.Point(460, 569);
+            this.lblSalario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSalario.Name = "lblSalario";
-            this.lblSalario.Size = new System.Drawing.Size(42, 13);
+            this.lblSalario.Size = new System.Drawing.Size(53, 16);
             this.lblSalario.TabIndex = 31;
             this.lblSalario.Text = "Salario:";
             // 
             // txtRequisitos
             // 
-            this.txtRequisitos.Location = new System.Drawing.Point(481, 302);
+            this.txtRequisitos.Location = new System.Drawing.Point(641, 372);
+            this.txtRequisitos.Margin = new System.Windows.Forms.Padding(4);
             this.txtRequisitos.Multiline = true;
             this.txtRequisitos.Name = "txtRequisitos";
-            this.txtRequisitos.Size = new System.Drawing.Size(318, 110);
+            this.txtRequisitos.Size = new System.Drawing.Size(423, 134);
             this.txtRequisitos.TabIndex = 30;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(345, 326);
+            this.label2.Location = new System.Drawing.Point(460, 401);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 13);
+            this.label2.Size = new System.Drawing.Size(74, 16);
             this.label2.TabIndex = 29;
             this.label2.Text = "Requisitos:";
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(481, 158);
+            this.txtDescripcion.Location = new System.Drawing.Point(641, 194);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(318, 110);
+            this.txtDescripcion.Size = new System.Drawing.Size(423, 134);
             this.txtDescripcion.TabIndex = 28;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(345, 182);
+            this.label1.Location = new System.Drawing.Point(460, 224);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 13);
+            this.label1.Size = new System.Drawing.Size(82, 16);
             this.label1.TabIndex = 27;
             this.label1.Text = "Descripción:";
             // 
             // txtNombreEmpresa
             // 
-            this.txtNombreEmpresa.Location = new System.Drawing.Point(481, 102);
+            this.txtNombreEmpresa.Location = new System.Drawing.Point(641, 126);
+            this.txtNombreEmpresa.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombreEmpresa.Name = "txtNombreEmpresa";
-            this.txtNombreEmpresa.Size = new System.Drawing.Size(318, 20);
+            this.txtNombreEmpresa.Size = new System.Drawing.Size(423, 22);
             this.txtNombreEmpresa.TabIndex = 26;
             // 
             // lblNombreEmpresa
             // 
             this.lblNombreEmpresa.AutoSize = true;
-            this.lblNombreEmpresa.Location = new System.Drawing.Point(345, 109);
+            this.lblNombreEmpresa.Location = new System.Drawing.Point(460, 134);
+            this.lblNombreEmpresa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombreEmpresa.Name = "lblNombreEmpresa";
-            this.lblNombreEmpresa.Size = new System.Drawing.Size(116, 13);
+            this.lblNombreEmpresa.Size = new System.Drawing.Size(149, 16);
             this.lblNombreEmpresa.TabIndex = 25;
             this.lblNombreEmpresa.Text = "Nombre de la empresa:";
             // 
             // btnLimpiarCampos
             // 
-            this.btnLimpiarCampos.Location = new System.Drawing.Point(773, 556);
+            this.btnLimpiarCampos.Location = new System.Drawing.Point(1031, 684);
+            this.btnLimpiarCampos.Margin = new System.Windows.Forms.Padding(4);
             this.btnLimpiarCampos.Name = "btnLimpiarCampos";
-            this.btnLimpiarCampos.Size = new System.Drawing.Size(125, 38);
+            this.btnLimpiarCampos.Size = new System.Drawing.Size(167, 47);
             this.btnLimpiarCampos.TabIndex = 36;
             this.btnLimpiarCampos.Text = "Limpiar Campos";
             this.btnLimpiarCampos.UseVisualStyleBackColor = true;
@@ -178,9 +194,9 @@
             // 
             // frmCrearVacante
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1202, 675);
+            this.ClientSize = new System.Drawing.Size(1359, 771);
             this.Controls.Add(this.btnLimpiarCampos);
             this.Controls.Add(this.btnEliminarVacante);
             this.Controls.Add(this.btnModificarVacante);
@@ -196,6 +212,7 @@
             this.Controls.Add(this.btnBuscarVacante);
             this.Controls.Add(this.txtPuesto);
             this.Controls.Add(this.label3);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmCrearVacante";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmNuevaVacante";

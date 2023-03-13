@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using proyecto_bases_datos;
 
 namespace proyecto_bases_datos
 {
@@ -142,6 +144,41 @@ namespace proyecto_bases_datos
                 conexionBD.Close();
             }
 
+        }
+
+        private void btnModificarVacante_Click(object sender, EventArgs e)
+        {
+            // Crear objeto Vacante con los valores del formulario
+            Vacante vacante = new Vacante();
+            vacante.NombreEmpresa = txtNombreEmpresa.Text;
+            vacante.NombrePuesto = txtPuesto.Text;
+            vacante.Descripcion = txtDescripcion.Text;
+            vacante.Requisitos = txtRequisitos.Text;
+            vacante.Salario = float.Parse(txtSalario.Text);
+
+            // Crear la consulta SQL para actualizar los campos de la vacante
+            string sql = $"UPDATE vacante SET nombre_empresa = '{vacante.NombreEmpresa}', descripcion = '{vacante.Descripcion}', requisitos = '{vacante.Requisitos}', salario = {vacante.Salario} WHERE nombre_puesto = '{vacante.NombrePuesto}'";
+
+            MySqlConnection conexionBD = Conexion.conexion();
+            conexionBD.Open();
+
+            try
+            {
+                MySqlCommand comando = new MySqlCommand(sql, conexionBD);
+
+                // Ejecutar el comando
+                comando.ExecuteNonQuery();
+
+                MessageBox.Show("La vacante se ha modificado correctamente.");
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show($"Error al Modificar: {ex}");
+            }
+            finally
+            {
+                conexionBD.Close();
+            }
         }
     }
 }
