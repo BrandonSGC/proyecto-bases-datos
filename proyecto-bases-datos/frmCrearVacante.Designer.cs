@@ -47,28 +47,27 @@
             // 
             // txtPuesto
             // 
-            this.txtPuesto.Location = new System.Drawing.Point(641, 57);
-            this.txtPuesto.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPuesto.Location = new System.Drawing.Point(481, 46);
             this.txtPuesto.Name = "txtPuesto";
-            this.txtPuesto.Size = new System.Drawing.Size(221, 22);
+            this.txtPuesto.Size = new System.Drawing.Size(167, 20);
             this.txtPuesto.TabIndex = 13;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(460, 65);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(314, 45);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(126, 16);
+            this.label3.Size = new System.Drawing.Size(161, 21);
             this.label3.TabIndex = 12;
             this.label3.Text = "Nombre del Puesto:";
             // 
             // btnBuscarVacante
             // 
-            this.btnBuscarVacante.Location = new System.Drawing.Point(899, 34);
-            this.btnBuscarVacante.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBuscarVacante.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarVacante.Location = new System.Drawing.Point(674, 28);
             this.btnBuscarVacante.Name = "btnBuscarVacante";
-            this.btnBuscarVacante.Size = new System.Drawing.Size(167, 47);
+            this.btnBuscarVacante.Size = new System.Drawing.Size(125, 38);
             this.btnBuscarVacante.TabIndex = 22;
             this.btnBuscarVacante.Text = "Buscar";
             this.btnBuscarVacante.UseVisualStyleBackColor = true;
@@ -76,10 +75,10 @@
             // 
             // btnEliminarVacante
             // 
-            this.btnEliminarVacante.Location = new System.Drawing.Point(833, 684);
-            this.btnEliminarVacante.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEliminarVacante.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarVacante.Location = new System.Drawing.Point(592, 556);
             this.btnEliminarVacante.Name = "btnEliminarVacante";
-            this.btnEliminarVacante.Size = new System.Drawing.Size(167, 47);
+            this.btnEliminarVacante.Size = new System.Drawing.Size(158, 38);
             this.btnEliminarVacante.TabIndex = 35;
             this.btnEliminarVacante.Text = "Eliminar Vacante";
             this.btnEliminarVacante.UseVisualStyleBackColor = true;
@@ -87,10 +86,10 @@
             // 
             // btnModificarVacante
             // 
-            this.btnModificarVacante.Location = new System.Drawing.Point(615, 684);
-            this.btnModificarVacante.Margin = new System.Windows.Forms.Padding(4);
+            this.btnModificarVacante.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificarVacante.Location = new System.Drawing.Point(416, 554);
             this.btnModificarVacante.Name = "btnModificarVacante";
-            this.btnModificarVacante.Size = new System.Drawing.Size(167, 47);
+            this.btnModificarVacante.Size = new System.Drawing.Size(170, 38);
             this.btnModificarVacante.TabIndex = 34;
             this.btnModificarVacante.Text = "Modificar Vacante";
             this.btnModificarVacante.UseVisualStyleBackColor = true;
@@ -98,10 +97,10 @@
             // 
             // btnCrearVacante
             // 
-            this.btnCrearVacante.Location = new System.Drawing.Point(408, 684);
-            this.btnCrearVacante.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCrearVacante.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCrearVacante.Location = new System.Drawing.Point(266, 554);
             this.btnCrearVacante.Name = "btnCrearVacante";
-            this.btnCrearVacante.Size = new System.Drawing.Size(167, 47);
+            this.btnCrearVacante.Size = new System.Drawing.Size(144, 38);
             this.btnCrearVacante.TabIndex = 33;
             this.btnCrearVacante.Text = "Crear Vacante";
             this.btnCrearVacante.UseVisualStyleBackColor = true;
@@ -109,84 +108,80 @@
             // 
             // txtSalario
             // 
-            this.txtSalario.Location = new System.Drawing.Point(641, 560);
-            this.txtSalario.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSalario.Location = new System.Drawing.Point(481, 455);
             this.txtSalario.Name = "txtSalario";
-            this.txtSalario.Size = new System.Drawing.Size(164, 22);
+            this.txtSalario.Size = new System.Drawing.Size(124, 20);
             this.txtSalario.TabIndex = 32;
             // 
             // lblSalario
             // 
             this.lblSalario.AutoSize = true;
-            this.lblSalario.Location = new System.Drawing.Point(460, 569);
-            this.lblSalario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSalario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSalario.Location = new System.Drawing.Point(345, 462);
             this.lblSalario.Name = "lblSalario";
-            this.lblSalario.Size = new System.Drawing.Size(53, 16);
+            this.lblSalario.Size = new System.Drawing.Size(65, 21);
             this.lblSalario.TabIndex = 31;
             this.lblSalario.Text = "Salario:";
             // 
             // txtRequisitos
             // 
-            this.txtRequisitos.Location = new System.Drawing.Point(641, 372);
-            this.txtRequisitos.Margin = new System.Windows.Forms.Padding(4);
+            this.txtRequisitos.Location = new System.Drawing.Point(481, 302);
             this.txtRequisitos.Multiline = true;
             this.txtRequisitos.Name = "txtRequisitos";
-            this.txtRequisitos.Size = new System.Drawing.Size(423, 134);
+            this.txtRequisitos.Size = new System.Drawing.Size(318, 110);
             this.txtRequisitos.TabIndex = 30;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(460, 401);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(345, 326);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 16);
+            this.label2.Size = new System.Drawing.Size(90, 21);
             this.label2.TabIndex = 29;
             this.label2.Text = "Requisitos:";
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(641, 194);
-            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDescripcion.Location = new System.Drawing.Point(481, 158);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(423, 134);
+            this.txtDescripcion.Size = new System.Drawing.Size(318, 110);
             this.txtDescripcion.TabIndex = 28;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(460, 224);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(345, 182);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 16);
+            this.label1.Size = new System.Drawing.Size(104, 21);
             this.label1.TabIndex = 27;
             this.label1.Text = "Descripción:";
             // 
             // txtNombreEmpresa
             // 
-            this.txtNombreEmpresa.Location = new System.Drawing.Point(641, 126);
-            this.txtNombreEmpresa.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNombreEmpresa.Location = new System.Drawing.Point(481, 102);
             this.txtNombreEmpresa.Name = "txtNombreEmpresa";
-            this.txtNombreEmpresa.Size = new System.Drawing.Size(423, 22);
+            this.txtNombreEmpresa.Size = new System.Drawing.Size(318, 20);
             this.txtNombreEmpresa.TabIndex = 26;
             // 
             // lblNombreEmpresa
             // 
             this.lblNombreEmpresa.AutoSize = true;
-            this.lblNombreEmpresa.Location = new System.Drawing.Point(460, 134);
-            this.lblNombreEmpresa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNombreEmpresa.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreEmpresa.Location = new System.Drawing.Point(283, 102);
             this.lblNombreEmpresa.Name = "lblNombreEmpresa";
-            this.lblNombreEmpresa.Size = new System.Drawing.Size(149, 16);
+            this.lblNombreEmpresa.Size = new System.Drawing.Size(192, 21);
             this.lblNombreEmpresa.TabIndex = 25;
             this.lblNombreEmpresa.Text = "Nombre de la empresa:";
             // 
             // btnLimpiarCampos
             // 
-            this.btnLimpiarCampos.Location = new System.Drawing.Point(1031, 684);
-            this.btnLimpiarCampos.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLimpiarCampos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiarCampos.Location = new System.Drawing.Point(750, 556);
             this.btnLimpiarCampos.Name = "btnLimpiarCampos";
-            this.btnLimpiarCampos.Size = new System.Drawing.Size(167, 47);
+            this.btnLimpiarCampos.Size = new System.Drawing.Size(148, 38);
             this.btnLimpiarCampos.TabIndex = 36;
             this.btnLimpiarCampos.Text = "Limpiar Campos";
             this.btnLimpiarCampos.UseVisualStyleBackColor = true;
@@ -194,9 +189,9 @@
             // 
             // frmCrearVacante
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1359, 771);
+            this.ClientSize = new System.Drawing.Size(1019, 609);
             this.Controls.Add(this.btnLimpiarCampos);
             this.Controls.Add(this.btnEliminarVacante);
             this.Controls.Add(this.btnModificarVacante);
@@ -212,7 +207,7 @@
             this.Controls.Add(this.btnBuscarVacante);
             this.Controls.Add(this.txtPuesto);
             this.Controls.Add(this.label3);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "frmCrearVacante";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmNuevaVacante";

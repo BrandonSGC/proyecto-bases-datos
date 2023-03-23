@@ -37,27 +37,30 @@
             // 
             // button5
             // 
+            this.button5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.Location = new System.Drawing.Point(507, 383);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(176, 44);
+            this.button5.Size = new System.Drawing.Size(213, 44);
             this.button5.TabIndex = 9;
             this.button5.Text = "button5";
             this.button5.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
+            this.button4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Location = new System.Drawing.Point(507, 333);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(176, 44);
+            this.button4.Size = new System.Drawing.Size(213, 44);
             this.button4.TabIndex = 8;
             this.button4.Text = "button4";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // btnMantenimientoVacantes
             // 
+            this.btnMantenimientoVacantes.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMantenimientoVacantes.Location = new System.Drawing.Point(507, 283);
             this.btnMantenimientoVacantes.Name = "btnMantenimientoVacantes";
-            this.btnMantenimientoVacantes.Size = new System.Drawing.Size(176, 44);
+            this.btnMantenimientoVacantes.Size = new System.Drawing.Size(213, 44);
             this.btnMantenimientoVacantes.TabIndex = 7;
             this.btnMantenimientoVacantes.Text = "Mantenimiento Vacantes";
             this.btnMantenimientoVacantes.UseVisualStyleBackColor = true;
@@ -65,18 +68,21 @@
             // 
             // btnMostrarCandidatos
             // 
+            this.btnMostrarCandidatos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMostrarCandidatos.Location = new System.Drawing.Point(507, 233);
             this.btnMostrarCandidatos.Name = "btnMostrarCandidatos";
-            this.btnMostrarCandidatos.Size = new System.Drawing.Size(176, 44);
+            this.btnMostrarCandidatos.Size = new System.Drawing.Size(213, 44);
             this.btnMostrarCandidatos.TabIndex = 6;
             this.btnMostrarCandidatos.Text = "Mostrar candidatos";
             this.btnMostrarCandidatos.UseVisualStyleBackColor = true;
             // 
             // btnIngresarCV
             // 
+            this.btnIngresarCV.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnIngresarCV.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresarCV.Location = new System.Drawing.Point(507, 183);
             this.btnIngresarCV.Name = "btnIngresarCV";
-            this.btnIngresarCV.Size = new System.Drawing.Size(176, 44);
+            this.btnIngresarCV.Size = new System.Drawing.Size(213, 44);
             this.btnIngresarCV.TabIndex = 5;
             this.btnIngresarCV.Text = "Ingresar CV";
             this.btnIngresarCV.UseVisualStyleBackColor = true;

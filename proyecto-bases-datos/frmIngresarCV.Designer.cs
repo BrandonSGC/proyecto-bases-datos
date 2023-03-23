@@ -43,9 +43,11 @@
             // 
             // btnLeerArchivo
             // 
+            this.btnLeerArchivo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLeerArchivo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLeerArchivo.Location = new System.Drawing.Point(539, 611);
             this.btnLeerArchivo.Name = "btnLeerArchivo";
-            this.btnLeerArchivo.Size = new System.Drawing.Size(112, 40);
+            this.btnLeerArchivo.Size = new System.Drawing.Size(135, 40);
             this.btnLeerArchivo.TabIndex = 3;
             this.btnLeerArchivo.Text = "Leer Archivo";
             this.btnLeerArchivo.UseVisualStyleBackColor = true;
