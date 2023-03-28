@@ -76,7 +76,7 @@ namespace proyecto_bases_datos
             }            
 
             // Guardamos el candidato en la base de datos
-            string sql = $"INSERT INTO candidato (cedula, nombre, apellidos, fecha_nacimiento, fecha_aplicacion) VALUES ({candidato.Cedula}, '{candidato.Nombre}', '{candidato.Apellidos}', '{candidato.Fecha_nacimiento}', '{candidato.Fecha_aplicacion}')";
+            string sql = $"INSERT INTO candidato VALUES ({candidato.Cedula}, '{candidato.Nombre}', '{candidato.Apellidos}', '{candidato.Fecha_nacimiento}', '{candidato.Fecha_aplicacion}')";
             MySqlConnection conexionBD = Conexion.conexion();
             conexionBD.Open();
             try

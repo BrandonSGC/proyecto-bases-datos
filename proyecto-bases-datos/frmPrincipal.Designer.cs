@@ -84,6 +84,7 @@
             this.btnMostrarCandidatos.TabIndex = 6;
             this.btnMostrarCandidatos.Text = "Mostrar candidatos";
             this.btnMostrarCandidatos.UseVisualStyleBackColor = true;
+            this.btnMostrarCandidatos.Click += new System.EventHandler(this.btnMostrarCandidatos_Click);
             // 
             // btnIngresarCV
             // 
