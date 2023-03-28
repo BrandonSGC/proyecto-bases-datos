@@ -180,5 +180,12 @@ namespace proyecto_bases_datos
                 conexionBD.Close();
             }
         }
+
+        private void pbAtras_Click(object sender, EventArgs e)
+        {
+            frmPrincipal frmPantalla = new frmPrincipal();
+            frmPantalla.Show();
+            this.Hide();
+        }
     }
 }

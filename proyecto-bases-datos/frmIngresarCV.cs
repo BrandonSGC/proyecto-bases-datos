@@ -97,5 +97,12 @@ namespace proyecto_bases_datos
             }
             app.Quit();
         }
+
+        private void pbAtras_Click(object sender, EventArgs e)
+        {
+            frmPrincipal frmPantalla = new frmPrincipal();
+            frmPantalla.Show();
+            this.Hide();
+        }
     }
 }

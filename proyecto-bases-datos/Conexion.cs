@@ -12,9 +12,9 @@ namespace proyecto_bases_datos
         public static MySqlConnection conexion()
         {
             string servidor = "localhost";
-            string bd = "proyectodatos";
+            string bd = "proyectobd";
             string usuario = "root";
-            string contrasena = "qwerty09";
+            string contrasena = "root";
 
             string cadenaConexion = $"Database={bd};Data Source={servidor};User Id={usuario};Password={contrasena}";
 
