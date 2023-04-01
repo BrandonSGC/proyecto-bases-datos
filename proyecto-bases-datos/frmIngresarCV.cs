@@ -41,6 +41,10 @@ namespace proyecto_bases_datos
             // Creamos el objeto candidato, el cual le asignaremos los datos de la plantilla de word.
             Candidato candidato = new Candidato();
 
+            Experiencia experiencia = new Experiencia();
+
+            Educacion educacion = new Educacion();
+
             int cont = 0;
 
             /* Obtenemos los datos especificos del candidato del documento a 
@@ -79,42 +83,41 @@ namespace proyecto_bases_datos
                     {
                         string puesto = datos[1].ToString();
                     }
+
                     // EMPIEZA LA EXPERIENCIA
                     if (cont == 8)
                     {
-                        string empresa = datos[1].ToString();
+                        experiencia.Empresa = datos[1].ToString();
                     }
                     if (cont == 9)
                     {
-                        string fechaInicio = datos[1].ToString();
+                        experiencia.Fecha_inicio = datos[1].ToString();
                     }
                     if (cont == 10)
                     {
-                        string fechaFinalizacion = datos[1].ToString();
+                        experiencia.Fecha_finalizacion = datos[1].ToString();
                     }
                     if (cont == 11)
                     {
-                        string descripcion = datos[1].ToString();
+                        experiencia.Descripcion = datos[1].ToString();
                     }
+
                     // EMPIEZA LA EDUCACION.
                     if (cont == 14)
                     {
-                        string centroEducativo = datos[1].ToString();
+                        educacion.Centro_educativo = datos[1].ToString();
                     }
-
                     if (cont == 15)
                     {
-                        string fechaInicioEdu= datos[1].ToString();
+                        educacion.Fecha_inicio = datos[1].ToString();
                     }
-
-                    if (cont == 14)
+                    if (cont == 16)
                     {
-                        string fechaFinalizacionEdu = datos[1].ToString();
+                        educacion.Fecha_finalizacion = datos[1].ToString();
                     }
-
-                    if (cont == 14)
+                    if (cont == 17)
                     {
-                        string descripcionEdu = datos[1].ToString();
+                        educacion.Descripcion = datos[1].ToString();
                     }
                 }
                 cont += 1;
@@ -122,14 +125,20 @@ namespace proyecto_bases_datos
 
             // Guardamos el candidato en la base de datos
             string sql = $"INSERT INTO candidato VALUES ({candidato.Cedula}, '{candidato.Nombre}', '{candidato.Apellidos}', '{candidato.Fecha_nacimiento}', '{candidato.Fecha_aplicacion}')";
+            string sql2 = $"INSERT INTO candidato_experiencia(cedula_candidato, empresa, fecha_inicio, fecha_finalizacion, descripcion) VALUES ({candidato.Cedula}, '{experiencia.Empresa}', '{experiencia.Fecha_inicio}', '{experiencia.Fecha_finalizacion}', '{experiencia.Descripcion}')";
+            string sql3 = $"INSERT INTO candidato_educacion(cedula_candidato, centro_educativo, fecha_inicio, fecha_finalizacion, descripcion) VALUES ({candidato.Cedula}, '{educacion.Centro_educativo}', '{educacion.Fecha_inicio}', '{educacion.Fecha_finalizacion}', '{educacion.Descripcion}')";
+
             MySqlConnection conexionBD = Conexion.conexion();
             conexionBD.Open();
             try
             {
                 MySqlCommand comando = new MySqlCommand(sql, conexionBD);
+                MySqlCommand comando2 = new MySqlCommand(sql2, conexionBD);
+                MySqlCommand comando3 = new MySqlCommand(sql3, conexionBD);
 
-                // Ejecutamos el comando.
-                comando.ExecuteNonQuery(); 
+                comando.ExecuteNonQuery();
+                comando2.ExecuteNonQuery();
+                comando3.ExecuteNonQuery();
                 MessageBox.Show("El candidato ha sido guardado con éxito!");
             }
             catch (MySqlException ex)
