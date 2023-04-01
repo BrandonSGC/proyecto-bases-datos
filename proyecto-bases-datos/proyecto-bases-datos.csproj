@@ -87,6 +87,8 @@
   <ItemGroup>
     <Compile Include="Candidato.cs" />
     <Compile Include="Conexion.cs" />
+    <Compile Include="Educacion.cs" />
+    <Compile Include="Experiencia.cs" />
     <Compile Include="frmIngresarCV.cs">
       <SubType>Form</SubType>
     </Compile>
