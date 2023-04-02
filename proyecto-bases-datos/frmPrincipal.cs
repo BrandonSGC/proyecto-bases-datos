@@ -37,5 +37,12 @@ namespace proyecto_bases_datos
             frmPantalla.Show();
             this.Hide();
         }
+
+        private void btnSeleccionCandidato_Click(object sender, EventArgs e)
+        {
+            frmSeleccionCandidato frmPantalla = new frmSeleccionCandidato();
+            frmPantalla.Show();
+            this.Hide();
+        }
     }
 }
