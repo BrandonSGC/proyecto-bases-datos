@@ -14,16 +14,18 @@ namespace proyecto_bases_datos
         private string apellidos;
         private string fecha_nacimiento;
         private string fecha_aplicacion;
+        private string puesto_aplicar;
 
 
         // Constructors
-        public Candidato(int cedula, string nombre, string apellidos, string fecha_nacimiento, string fecha_aplicacion)
+        public Candidato(int cedula, string nombre, string apellidos, string fecha_nacimiento, string fecha_aplicacion, string puesto_aplicar)
         {
             this.cedula = cedula;
             this.nombre = nombre;
             this.apellidos = apellidos;
             this.fecha_nacimiento = fecha_nacimiento;
             this.fecha_aplicacion = fecha_aplicacion;
+            this.puesto_aplicar = puesto_aplicar;
         }
 
         public Candidato()
@@ -33,6 +35,7 @@ namespace proyecto_bases_datos
             this.apellidos = "";
             this.fecha_nacimiento = "";
             this.fecha_aplicacion = "";
+            this.puesto_aplicar = "";
         }
 
         // Getters & Setters
@@ -64,6 +67,12 @@ namespace proyecto_bases_datos
         {
             get { return fecha_aplicacion; }
             set { fecha_aplicacion = value; }
+        }
+
+        public string Puesto_aplicar
+        {
+            get { return puesto_aplicar; }
+            set { puesto_aplicar = value; }
         }
     }
 }

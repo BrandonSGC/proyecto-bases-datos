@@ -53,5 +53,10 @@ namespace proyecto_bases_datos
                 conexionBD.Close();
             }
         }
+
+        private void btnFiltrar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

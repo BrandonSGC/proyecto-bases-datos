@@ -81,7 +81,7 @@ namespace proyecto_bases_datos
                     }
                     if (cont == 5)
                     {
-                        string puesto = datos[1].ToString();
+                        candidato.Puesto_aplicar = datos[1].ToString();
                     }
 
                     // EMPIEZA LA EXPERIENCIA
@@ -124,7 +124,7 @@ namespace proyecto_bases_datos
             }                        
 
             // Guardamos el candidato en la base de datos
-            string sql = $"INSERT INTO candidato VALUES ({candidato.Cedula}, '{candidato.Nombre}', '{candidato.Apellidos}', '{candidato.Fecha_nacimiento}', '{candidato.Fecha_aplicacion}')";
+            string sql = $"INSERT INTO candidato VALUES ({candidato.Cedula}, '{candidato.Nombre}', '{candidato.Apellidos}', '{candidato.Fecha_nacimiento}', '{candidato.Fecha_aplicacion}', '{candidato.Puesto_aplicar}')";
             string sql2 = $"INSERT INTO candidato_experiencia(cedula_candidato, empresa, fecha_inicio, fecha_finalizacion, descripcion) VALUES ({candidato.Cedula}, '{experiencia.Empresa}', '{experiencia.Fecha_inicio}', '{experiencia.Fecha_finalizacion}', '{experiencia.Descripcion}')";
             string sql3 = $"INSERT INTO candidato_educacion(cedula_candidato, centro_educativo, fecha_inicio, fecha_finalizacion, descripcion) VALUES ({candidato.Cedula}, '{educacion.Centro_educativo}', '{educacion.Fecha_inicio}', '{educacion.Fecha_finalizacion}', '{educacion.Descripcion}')";
 
