@@ -41,6 +41,7 @@ namespace proyecto_bases_datos
         private void btnSeleccionCandidato_Click(object sender, EventArgs e)
         {
             frmSeleccionCandidato frmPantalla = new frmSeleccionCandidato();
+            //frmMostrarCandidatos frmPantalla = new frmMostrarCandidatos();
             frmPantalla.Show();
             this.Hide();
         }

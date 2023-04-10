@@ -58,9 +58,9 @@
             // 
             this.cbPuestos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPuestos.FormattingEnabled = true;
-            this.cbPuestos.Location = new System.Drawing.Point(246, 137);
+            this.cbPuestos.Location = new System.Drawing.Point(153, 22);
             this.cbPuestos.Name = "cbPuestos";
-            this.cbPuestos.Size = new System.Drawing.Size(230, 29);
+            this.cbPuestos.Size = new System.Drawing.Size(493, 29);
             this.cbPuestos.TabIndex = 29;
             // 
             // btnFiltrar
@@ -79,7 +79,7 @@
             // 
             this.lblPuesto.AutoSize = true;
             this.lblPuesto.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPuesto.Location = new System.Drawing.Point(162, 140);
+            this.lblPuesto.Location = new System.Drawing.Point(69, 25);
             this.lblPuesto.Name = "lblPuesto";
             this.lblPuesto.Size = new System.Drawing.Size(66, 21);
             this.lblPuesto.TabIndex = 27;
@@ -96,10 +96,11 @@
             this.Controls.Add(this.tbnRecomendarCandidato);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmSeleccionCandidato";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmSeleccionCandidato";
+            this.Load += new System.EventHandler(this.frmSeleccionCandidato_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

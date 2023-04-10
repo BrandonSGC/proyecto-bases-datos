@@ -13,6 +13,7 @@ namespace proyecto_bases_datos
         private string descripcion;
         private string requisitos;        
         private float salario;
+        private string idiomas;
         
         public string NombreEmpresa
         {
@@ -44,13 +45,20 @@ namespace proyecto_bases_datos
             set { salario = value; }
         }
 
-        public Vacante(string nombre_empresa, string nombre_puesto, string descripcion, string requisitos, float salario)
+        public string Idiomas
+        {
+            get { return idiomas; }
+            set { idiomas = value; }
+        }
+
+        public Vacante(string nombre_empresa, string nombre_puesto, string descripcion, string requisitos, float salario, string idiomas)
         {            
             this.nombre_empresa = nombre_empresa;
             this.nombre_puesto = nombre_puesto;
             this.descripcion = descripcion;
             this.requisitos = requisitos;
             this.salario = salario;
+            this.idiomas = idiomas;
         }
 
         public Vacante()
@@ -60,6 +68,7 @@ namespace proyecto_bases_datos
             descripcion = "";
             requisitos = "";
             salario = 0;
+            idiomas = "";
         }
 
     }

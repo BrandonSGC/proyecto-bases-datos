@@ -33,9 +33,10 @@ namespace proyecto_bases_datos
             vacante.Descripcion = txtDescripcion.Text;
             vacante.Requisitos = txtRequisitos.Text;
             vacante.Salario = float.Parse(txtSalario.Text);
+            vacante.Idiomas = txtIdiomas.Text;
 
             // Guardamos el candidato en la base de datos
-            string sql = $"INSERT INTO vacante (nombre_empresa, nombre_puesto, descripcion, requisitos, salario) VALUES ('{vacante.NombreEmpresa}', '{vacante.NombrePuesto}', '{vacante.Descripcion}', '{vacante.Requisitos}', {vacante.Salario})";
+            string sql = $"INSERT INTO vacante (nombre_empresa, nombre_puesto, descripcion, requisitos, salario,idiomas) VALUES ('{vacante.NombreEmpresa}', '{vacante.NombrePuesto}', '{vacante.Descripcion}', '{vacante.Requisitos}', '{vacante.Salario}','{vacante.Idiomas}')";
             MySqlConnection conexionBD = Conexion.conexion();
             conexionBD.Open();
             try
@@ -49,7 +50,7 @@ namespace proyecto_bases_datos
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show($"Error al Guardar: {ex}");
+                MessageBox.Show($"Error al Guardar vacante: {ex}");
             }
             finally
             {
@@ -67,7 +68,7 @@ namespace proyecto_bases_datos
             MySqlDataReader reader = null;
 
             // Creamos la consulta.
-            string sql = $"SELECT nombre_empresa, nombre_puesto, descripcion, requisitos, salario FROM vacante WHERE nombre_puesto = '{vacante.NombrePuesto}' LIMIT 1";
+            string sql = $"SELECT nombre_empresa, nombre_puesto, descripcion, requisitos, salario, idiomas FROM vacante WHERE nombre_puesto = '{vacante.NombrePuesto}' LIMIT 1";
             MySqlConnection conexionBD = Conexion.conexion();
             conexionBD.Open();
             try
@@ -84,8 +85,9 @@ namespace proyecto_bases_datos
                         txtNombreEmpresa.Text = reader.GetString(0);
                         txtPuesto.Text = reader.GetString(1);
                         txtDescripcion.Text = reader.GetString(2);
-                        txtRequisitos.Text = reader.GetString(3);
+                        txtRequisitos.Text = reader.GetString(3); 
                         txtSalario.Text = reader.GetString(4);
+                        txtIdiomas.Text = reader.GetString(5);
                     }
                 }
                 else
@@ -95,7 +97,7 @@ namespace proyecto_bases_datos
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show($"Error al Guardar: {ex}");
+                MessageBox.Show($"Error al Guardar vacante: {ex}");
             }
             finally
             {
@@ -110,6 +112,7 @@ namespace proyecto_bases_datos
             txtDescripcion.Text = "";
             txtRequisitos.Text = "";
             txtSalario.Text = "";
+            txtIdiomas.Text = "";
         }
 
         private void btnLimpiarCampos_Click(object sender, EventArgs e)
@@ -137,7 +140,7 @@ namespace proyecto_bases_datos
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show($"Error al Guardar: {ex}");
+                MessageBox.Show($"Error al Guardar Vacante: {ex}");
             }
             finally
             {
@@ -155,9 +158,10 @@ namespace proyecto_bases_datos
             vacante.Descripcion = txtDescripcion.Text;
             vacante.Requisitos = txtRequisitos.Text;
             vacante.Salario = float.Parse(txtSalario.Text);
+            vacante.Idiomas = txtIdiomas.Text;
 
             // Crear la consulta SQL para actualizar los campos de la vacante
-            string sql = $"UPDATE vacante SET nombre_empresa = '{vacante.NombreEmpresa}', descripcion = '{vacante.Descripcion}', requisitos = '{vacante.Requisitos}', salario = {vacante.Salario} WHERE nombre_puesto = '{vacante.NombrePuesto}'";
+            string sql = $"UPDATE vacante SET nombre_empresa = '{vacante.NombreEmpresa}', descripcion = '{vacante.Descripcion}', requisitos = '{vacante.Requisitos}', salario = '{vacante.Salario}', idiomas= '{vacante.Idiomas}' WHERE nombre_puesto = '{vacante.NombrePuesto}'";
 
             MySqlConnection conexionBD = Conexion.conexion();
             conexionBD.Open();
@@ -173,7 +177,7 @@ namespace proyecto_bases_datos
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show($"Error al Modificar: {ex}");
+                MessageBox.Show($"Error al Modificar vacante: {ex}");
             }
             finally
             {

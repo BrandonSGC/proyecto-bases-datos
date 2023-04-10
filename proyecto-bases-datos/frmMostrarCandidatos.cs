@@ -31,6 +31,7 @@ namespace proyecto_bases_datos
             
             try
             {
+                cargarPuestos();
                 conexionBD.Open();
                 MySqlCommand comando = new MySqlCommand();
                 comando.Connection = conexionBD;
@@ -47,6 +48,32 @@ namespace proyecto_bases_datos
             catch (MySqlException ex)
             {
                 MessageBox.Show($"Error al Mosstrar los Datos: {ex}");
+            }
+            finally
+            {
+                conexionBD.Close();
+            }
+        }
+
+        private void cargarPuestos()
+        {
+            MySqlConnection conexionBD = Conexion.conexion();
+
+            try
+            {
+                conexionBD.Open();
+                string sql = ("SELECT id_vacante, concat( nombre_empresa,' ', nombre_puesto) puesto FROM vacante");
+              
+                MySqlDataAdapter adapter = new MySqlDataAdapter(sql, conexionBD);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
+                cbPuestos.DataSource = dataTable;
+                cbPuestos.DisplayMember = "puesto";
+                cbPuestos.ValueMember = "id_vacante";
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show($"Error al Mostrar los Datos de vacantes: {ex}");
             }
             finally
             {

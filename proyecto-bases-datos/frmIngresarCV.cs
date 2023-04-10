@@ -45,7 +45,14 @@ namespace proyecto_bases_datos
 
             Educacion educacion = new Educacion();
 
+            List<Experiencia> ListaExperiencia = new List<Experiencia>();
+
+            List<Educacion> ListaEducacion = new List<Educacion>();
+
             int cont = 0;
+            string tipoDato = null;
+            bool hayDatosEducacion = false;
+            bool hayDatosExperiencia = false;
 
             /* Obtenemos los datos especificos del candidato del documento a 
             * partir de la lectura de cada linea, para con el metodo split() 
@@ -56,99 +63,143 @@ namespace proyecto_bases_datos
                 string line = paragraph.Range.Text.Trim();
                 string[] datos = line.Split(':');
 
+
                 // Validamos que haya texto, sino salta de linea.
                 if (line.Length > 0)
                 {
-                    if (cont == 0)
-                    {
-                        candidato.Cedula = int.Parse(datos[1].ToString());
+                    if (datos[0].ToString().ToUpper() == "EXPERIENCIA")
+                    { 
+                        cont = 7;
+                        hayDatosExperiencia = true;
                     }
-                    if (cont == 1)
+                    else if(datos[0].ToString().ToUpper() == "EDUCACIÓN")
                     {
-                        candidato.Nombre = datos[1].ToString();
-                    }
-                    if (cont == 2)
-                    {
-                        candidato.Apellidos = datos[1].ToString();
-                    }
-                    if (cont == 3)
-                    {
-                        candidato.Fecha_nacimiento = datos[1].ToString();
-                    }
-                    if (cont == 4)
-                    {
-                        candidato.Fecha_aplicacion = datos[1].ToString();
-                    }
-                    if (cont == 5)
-                    {
-                        string puesto = datos[1].ToString();
+                        cont = 12;
+                        hayDatosEducacion = true;
                     }
 
-                    // EMPIEZA LA EXPERIENCIA
-                    if (cont == 8)
+                    switch (cont)
                     {
-                        experiencia.Empresa = datos[1].ToString();
-                    }
-                    if (cont == 9)
-                    {
-                        experiencia.Fecha_inicio = datos[1].ToString();
-                    }
-                    if (cont == 10)
-                    {
-                        experiencia.Fecha_finalizacion = datos[1].ToString();
-                    }
-                    if (cont == 11)
-                    {
-                        experiencia.Descripcion = datos[1].ToString();
+                        case 0:
+                            candidato.Cedula = int.Parse(datos[1].ToString());
+                            break;
+
+                        case 1:
+                            candidato.Nombre = datos[1].ToString();
+                            break;
+
+                        case 2:
+                            candidato.Apellidos = datos[1].ToString();
+                            break;
+
+                        case 3:
+                            candidato.Fecha_nacimiento = datos[1].ToString();
+                            break;
+
+                        case 4:
+                            candidato.Fecha_aplicacion = datos[1].ToString();
+                            break;
+
+                        case 5:
+                            candidato.Puesto = datos[1].ToString();
+                            break;
+
+                        case 6:
+                            candidato.Idiomas = datos[1].ToString();
+                            break;
+
+                        case 7: // Experiencia
+                            experiencia = new Experiencia();
+                            break;
+
+                        case 8:
+                            experiencia.Empresa = datos[1].ToString();
+                            break;
+
+                        case 9:
+                            experiencia.Fecha_inicio = datos[1].ToString();
+                            break;
+
+                        case 10:
+                            experiencia.Fecha_finalizacion = datos[1].ToString();
+                            break;
+
+                        case 11:
+                            experiencia.Descripcion = datos[1].ToString();
+                            ListaExperiencia.Add(experiencia);
+                            break;
+
+                        case 12: // Educación
+                            educacion = new Educacion();
+                            break;
+
+                        case 13:
+                            educacion.Centro_educativo = datos[1].ToString();
+                            break;
+
+                        case 14:
+                            educacion.Fecha_inicio = datos[1].ToString();
+                            break;
+
+                        case 15:
+                            educacion.Fecha_finalizacion = datos[1].ToString();
+                            break;
+
+                        case 16:
+                            educacion.Descripcion = datos[1].ToString();
+                            ListaEducacion.Add(educacion);
+                            break;
                     }
 
-                    // EMPIEZA LA EDUCACION.
-                    if (cont == 14)
-                    {
-                        educacion.Centro_educativo = datos[1].ToString();
-                    }
-                    if (cont == 15)
-                    {
-                        educacion.Fecha_inicio = datos[1].ToString();
-                    }
-                    if (cont == 16)
-                    {
-                        educacion.Fecha_finalizacion = datos[1].ToString();
-                    }
-                    if (cont == 17)
-                    {
-                        educacion.Descripcion = datos[1].ToString();
-                    }
                 }
                 cont += 1;
-            }                        
-
-            // Guardamos el candidato en la base de datos
-            string sql = $"INSERT INTO candidato VALUES ({candidato.Cedula}, '{candidato.Nombre}', '{candidato.Apellidos}', '{candidato.Fecha_nacimiento}', '{candidato.Fecha_aplicacion}')";
-            string sql2 = $"INSERT INTO candidato_experiencia(cedula_candidato, empresa, fecha_inicio, fecha_finalizacion, descripcion) VALUES ({candidato.Cedula}, '{experiencia.Empresa}', '{experiencia.Fecha_inicio}', '{experiencia.Fecha_finalizacion}', '{experiencia.Descripcion}')";
-            string sql3 = $"INSERT INTO candidato_educacion(cedula_candidato, centro_educativo, fecha_inicio, fecha_finalizacion, descripcion) VALUES ({candidato.Cedula}, '{educacion.Centro_educativo}', '{educacion.Fecha_inicio}', '{educacion.Fecha_finalizacion}', '{educacion.Descripcion}')";
+            }
 
             MySqlConnection conexionBD = Conexion.conexion();
             conexionBD.Open();
+            // Guardamos el candidato en la base de datos
+            string sql = $"INSERT INTO candidato VALUES ({candidato.Cedula}, '{candidato.Nombre}', '{candidato.Apellidos}', '{candidato.Fecha_nacimiento}', '{candidato.Fecha_aplicacion}','{candidato.Puesto}','{candidato.Idiomas}') ON DUPLICATE KEY UPDATE nombre ='{candidato.Nombre}', apellidos= '{candidato.Apellidos}', fecha_nacimiento ='{candidato.Fecha_nacimiento}', fecha_aplicacion = '{candidato.Fecha_aplicacion}', puesto='{candidato.Puesto}', idiomas='{candidato.Idiomas}'";
             try
             {
                 MySqlCommand comando = new MySqlCommand(sql, conexionBD);
-                MySqlCommand comando2 = new MySqlCommand(sql2, conexionBD);
-                MySqlCommand comando3 = new MySqlCommand(sql3, conexionBD);
-
                 comando.ExecuteNonQuery();
-                comando2.ExecuteNonQuery();
-                comando3.ExecuteNonQuery();
-                MessageBox.Show("El candidato ha sido guardado con éxito!");
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show($"Error al Guardar: {ex}");
+                MessageBox.Show($"Error al Guardar datos de candidato: {ex}");
             }
-            finally
+         
+            foreach (Experiencia experiencia1 in ListaExperiencia)
             {
-                conexionBD.Close();
+                sql = $"INSERT INTO candidato_experiencia(cedula_candidato, empresa, fecha_inicio, fecha_finalizacion, descripcion) VALUES ({candidato.Cedula}, '{experiencia1.Empresa}', '{experiencia1.Fecha_inicio}', '{experiencia1.Fecha_finalizacion}', '{experiencia1.Descripcion}')";
+                try
+                {
+                    MySqlCommand comando = new MySqlCommand(sql, conexionBD);
+                    comando.ExecuteNonQuery();
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show($"Error al Guardar datos de experiencia: {ex}");
+                }
             }
+
+            foreach (Educacion educacion1 in ListaEducacion)
+            {
+                sql = $"INSERT INTO candidato_educacion(cedula_candidato, centro_educativo, fecha_inicio, fecha_finalizacion, descripcion) VALUES ({candidato.Cedula}, '{educacion1.Centro_educativo}', '{educacion1.Fecha_inicio}', '{educacion1.Fecha_finalizacion}', '{educacion1.Descripcion}')";
+                try
+                {
+                    MySqlCommand comando = new MySqlCommand(sql, conexionBD);
+                    comando.ExecuteNonQuery();
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show($"Error al Guardar datos de educación: {ex}");
+                }
+            }
+
+            MessageBox.Show("El candidato ha sido guardado con éxito!");
+            conexionBD.Close();
+
             app.Quit();
         }
 
