@@ -10,8 +10,10 @@ using System.Windows.Forms;
 
 namespace proyecto_bases_datos
 {
+   
     public partial class frmPrincipal : Form
     {
+       
         public frmPrincipal()
         {
             InitializeComponent();
@@ -40,9 +42,11 @@ namespace proyecto_bases_datos
 
         private void btnSeleccionCandidato_Click(object sender, EventArgs e)
         {
-            frmSeleccionCandidato frmPantalla = new frmSeleccionCandidato();
+
+        frmSeleccionCandidato frmPantallaCandidato = new frmSeleccionCandidato();
             //frmMostrarCandidatos frmPantalla = new frmMostrarCandidatos();
-            frmPantalla.Show();
+            
+            frmPantallaCandidato.Show();
             this.Hide();
         }
     }

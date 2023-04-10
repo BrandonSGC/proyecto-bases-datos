@@ -28,26 +28,105 @@ namespace proyecto_bases_datos
         private void frmMostrarCandidatos_Load(object sender, EventArgs e)
         {
             MySqlConnection conexionBD = Conexion.conexion();
-            
+
             try
             {
-                cargarPuestos();
+                txtEmpresa.Text = VariablesGlobales.nombre_empresa;
+                txtPuesto.Text = VariablesGlobales.nombre_puesto;
+                txtDescripcion.Text = VariablesGlobales.descripcion;
+                txtRequisitos.Text = VariablesGlobales.requisitos;
+                txtIdiomas.Text = VariablesGlobales.idiomas;
                 conexionBD.Open();
                 MySqlCommand comando = new MySqlCommand();
                 comando.Connection = conexionBD;
-                comando.CommandText = ("SELECT * FROM candidato");
+                comando.CommandText = $"SELECT * FROM candidato WHERE UPPER(puesto) like UPPER('%{VariablesGlobales.nombre_puesto}%') AND UPPER(idiomas) like UPPER('%{VariablesGlobales.idiomas}%') ";
 
                 MySqlDataAdapter adapter = new MySqlDataAdapter();
-                adapter.SelectCommand = comando;               
+                adapter.SelectCommand = comando;
 
-                DataTable table = new DataTable();
-                adapter.Fill(table);
-                dgvCandidatos.DataSource = table;
+                DataTable tablaCandidatos = new DataTable();
+                adapter.Fill(tablaCandidatos);
+                dgvCandidatos.DataSource = tablaCandidatos;
 
+                if (tablaCandidatos.Rows.Count <= 0)
+                {
+                    MessageBox.Show("No hay candidatos que cumplan con lo requerido para el puesto");
+
+                }
+                else
+                {
+
+                    DataGridViewTextBoxColumn colExperiencia = new DataGridViewTextBoxColumn();
+                    colExperiencia.HeaderText = "Experiencia";
+                    colExperiencia.Name = "txtExperiencia";
+                    dgvCandidatos.Columns.Add(colExperiencia);
+
+                    DataGridViewTextBoxColumn colEducacion = new DataGridViewTextBoxColumn();
+                    colEducacion.HeaderText = "Educación";
+                    colEducacion.Name = "txtEducacion";
+                    dgvCandidatos.Columns.Add(colEducacion);
+
+                    // se recorre el datagridview para determinar quienes tienen experiencia y educacion para el puesto
+                    bool experiencia = false;
+                    bool educacion = false;
+                    foreach (DataGridViewRow fila in dgvCandidatos.Rows)
+                    {
+                        int cedula = Convert.ToInt32(fila.Cells[0].Value.ToString());
+
+                        // experiencia
+                        comando.CommandText = $"SELECT * FROM candidato_experiencia  WHERE cedula_candidato = {cedula} AND  descripcion LIKE UPPER('%{VariablesGlobales.descripcion}%')";
+
+                        adapter.SelectCommand = comando;
+
+                        DataTable tablaExperiencia = new DataTable();
+                        adapter.Fill(tablaExperiencia);
+
+                        DataGridViewCell cell = fila.Cells[dgvCandidatos.Columns["txtExperiencia"].Index];
+
+                        if (tablaExperiencia.Rows.Count > 0)
+                        {
+                            cell.Value = "SI Tiene";
+                            experiencia = true;
+                        }
+                        else
+                        {
+                            cell.Value = "NO Tiene";
+                            experiencia = false;
+                        }
+
+                        // educacion
+                        comando.CommandText = $"SELECT * FROM candidato_educacion  WHERE cedula_candidato = {cedula} AND  descripcion LIKE UPPER('%{VariablesGlobales.requisitos}%')";
+
+                        adapter.SelectCommand = comando;
+
+                        DataTable tablaEducacion = new DataTable();
+                        adapter.Fill(tablaEducacion);
+
+                        cell = fila.Cells[dgvCandidatos.Columns["txtEducacion"].Index];
+
+                        if (tablaEducacion.Rows.Count > 0)
+                        {
+                            cell.Value = "SI Tiene";
+                            educacion = true;
+                        }
+                        else
+                        {
+                            cell.Value = "NO Tiene";
+                            educacion = false;
+                        }
+
+                        if (educacion == true && experiencia == true)
+                        {
+                            fila.DefaultCellStyle.BackColor = Color.GreenYellow;
+                        }
+
+                    }
+
+                }
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show($"Error al Mosstrar los Datos: {ex}");
+                MessageBox.Show($"Error al Mostrar los Datos: {ex}");
             }
             finally
             {
@@ -55,30 +134,5 @@ namespace proyecto_bases_datos
             }
         }
 
-        private void cargarPuestos()
-        {
-            MySqlConnection conexionBD = Conexion.conexion();
-
-            try
-            {
-                conexionBD.Open();
-                string sql = ("SELECT id_vacante, concat( nombre_empresa,' ', nombre_puesto) puesto FROM vacante");
-              
-                MySqlDataAdapter adapter = new MySqlDataAdapter(sql, conexionBD);
-                DataTable dataTable = new DataTable();
-                adapter.Fill(dataTable);
-                cbPuestos.DataSource = dataTable;
-                cbPuestos.DisplayMember = "puesto";
-                cbPuestos.ValueMember = "id_vacante";
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show($"Error al Mostrar los Datos de vacantes: {ex}");
-            }
-            finally
-            {
-                conexionBD.Close();
-            }
-        }
     }
 }
