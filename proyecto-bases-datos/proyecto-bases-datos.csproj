@@ -89,6 +89,12 @@
     <Compile Include="Conexion.cs" />
     <Compile Include="Educacion.cs" />
     <Compile Include="Experiencia.cs" />
+    <Compile Include="frmAcercaDe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAcercaDe.Designer.cs">
+      <DependentUpon>frmAcercaDe.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmIngresarCV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,9 @@
     <Compile Include="Puesto.cs" />
     <Compile Include="Vacante.cs" />
     <Compile Include="VariablesGlobales.cs" />
+    <EmbeddedResource Include="frmAcercaDe.resx">
+      <DependentUpon>frmAcercaDe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmIngresarCV.resx">
       <DependentUpon>frmIngresarCV.cs</DependentUpon>
     </EmbeddedResource>

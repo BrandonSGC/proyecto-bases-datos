@@ -54,5 +54,13 @@ namespace proyecto_bases_datos
         {
 
         }
+
+        private void btnAcercaDe_Click(object sender, EventArgs e)
+        {
+            frmAcercaDe frmAcercaDe = new frmAcercaDe();
+            frmAcercaDe.Show();
+            this.Hide();
+            
+        }
     }
 }
