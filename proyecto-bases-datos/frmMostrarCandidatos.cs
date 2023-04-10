@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace proyecto_bases_datos
 {
@@ -27,6 +28,7 @@ namespace proyecto_bases_datos
 
         private void frmMostrarCandidatos_Load(object sender, EventArgs e)
         {
+            cargarPuestos();
             MySqlConnection conexionBD = Conexion.conexion();
 
             try
@@ -40,6 +42,35 @@ namespace proyecto_bases_datos
                 MySqlCommand comando = new MySqlCommand();
                 comando.Connection = conexionBD;
                 comando.CommandText = $"SELECT * FROM candidato WHERE UPPER(puesto) like UPPER('%{VariablesGlobales.nombre_puesto}%') AND UPPER(idiomas) like UPPER('%{VariablesGlobales.idiomas}%') ";
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter();
+                adapter.SelectCommand = comando;               
+
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                dgvCandidatos.DataSource = table;
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show($"Error al Mostrar los Datos: {ex}");
+            }
+            finally
+            {
+                conexionBD.Close();
+            }
+        }
+
+        private void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            MySqlConnection conexionBD = Conexion.conexion();
+
+            try
+            {
+                conexionBD.Open();
+                MySqlCommand comando = new MySqlCommand();
+                comando.Connection = conexionBD;
+                comando.CommandText = ($"SELECT * FROM candidato WHERE puesto_aplicar = '{cbPuestos.SelectedItem.ToString()}'");
 
                 MySqlDataAdapter adapter = new MySqlDataAdapter();
                 adapter.SelectCommand = comando;
