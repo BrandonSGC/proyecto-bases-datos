@@ -85,7 +85,7 @@ namespace proyecto_bases_datos
                         txtNombreEmpresa.Text = reader.GetString(0);
                         txtPuesto.Text = reader.GetString(1);
                         txtDescripcion.Text = reader.GetString(2);
-                        txtRequisitos.Text = reader.GetString(3); 
+                        txtRequisitos.Text = reader.GetString(3);
                         txtSalario.Text = reader.GetString(4);
                         txtIdiomas.Text = reader.GetString(5);
                     }

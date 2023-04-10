@@ -36,8 +36,8 @@ namespace proyecto_bases_datos
             Document doc = app.Documents.Open(filePath);
             string data = doc.Content.Text;
             richTextBox1.Text = data;
-            
-            
+
+
             // Creamos el objeto candidato, el cual le asignaremos los datos de la plantilla de word.
             Candidato candidato = new Candidato();
 
@@ -68,11 +68,11 @@ namespace proyecto_bases_datos
                 if (line.Length > 0)
                 {
                     if (datos[0].ToString().ToUpper() == "EXPERIENCIA")
-                    { 
+                    {
                         cont = 7;
                         hayDatosExperiencia = true;
                     }
-                    else if(datos[0].ToString().ToUpper() == "EDUCACIÓN")
+                    else if (datos[0].ToString().ToUpper() == "EDUCACIÓN")
                     {
                         cont = 12;
                         hayDatosEducacion = true;
@@ -168,7 +168,7 @@ namespace proyecto_bases_datos
             {
                 MessageBox.Show($"Error al Guardar datos de candidato: {ex}");
             }
-         
+
             foreach (Experiencia experiencia1 in ListaExperiencia)
             {
                 sql = $"INSERT INTO candidato_experiencia(cedula_candidato, empresa, fecha_inicio, fecha_finalizacion, descripcion) VALUES ({candidato.Cedula}, '{experiencia1.Empresa}', '{experiencia1.Fecha_inicio}', '{experiencia1.Fecha_finalizacion}', '{experiencia1.Descripcion}')";
@@ -208,6 +208,11 @@ namespace proyecto_bases_datos
             frmPrincipal frmPantalla = new frmPrincipal();
             frmPantalla.Show();
             this.Hide();
+        }
+
+        private void frmIngresarCV_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

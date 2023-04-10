@@ -11,10 +11,10 @@ namespace proyecto_bases_datos
         private string nombre_empresa;
         private string nombre_puesto;
         private string descripcion;
-        private string requisitos;        
+        private string requisitos;
         private float salario;
         private string idiomas;
-        
+
         public string NombreEmpresa
         {
             get { return nombre_empresa; }
@@ -52,7 +52,7 @@ namespace proyecto_bases_datos
         }
 
         public Vacante(string nombre_empresa, string nombre_puesto, string descripcion, string requisitos, float salario, string idiomas)
-        {            
+        {
             this.nombre_empresa = nombre_empresa;
             this.nombre_puesto = nombre_puesto;
             this.descripcion = descripcion;

@@ -14,7 +14,7 @@ namespace proyecto_bases_datos
             string servidor = "localhost";
             string bd = "proyectobd";
             string usuario = "root";
-            string contrasena = "mysql";
+            string contrasena = "qwerty09";
 
             string cadenaConexion = $"Database={bd};Data Source={servidor};User Id={usuario};Password={contrasena}";
 

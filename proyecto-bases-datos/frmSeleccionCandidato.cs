@@ -14,10 +14,10 @@ namespace proyecto_bases_datos
 {
     public partial class frmSeleccionCandidato : Form
     {
-      public frmSeleccionCandidato()
-      {
-           InitializeComponent();
-       }
+        public frmSeleccionCandidato()
+        {
+            InitializeComponent();
+        }
 
         private void pbAtras_Click(object sender, EventArgs e)
         {
@@ -88,8 +88,8 @@ namespace proyecto_bases_datos
                 DataRowView selectedRow = (DataRowView)cbPuestos.SelectedItem;
                 valor_vacante = (int)selectedRow["id_vacante"];
             }
-                  
-           
+
+
             try
             {
                 conexionBD.Open();
@@ -100,7 +100,7 @@ namespace proyecto_bases_datos
                 adapter.Fill(dataTable);
                 foreach (DataRow fila in dataTable.Rows)
                 {
-                    txtEmpresa.Text =   fila["nombre_empresa"].ToString();
+                    txtEmpresa.Text = fila["nombre_empresa"].ToString();
                     txtPuesto.Text = fila["nombre_puesto"].ToString();
                     txtDescripcion.Text = fila["descripcion"].ToString();
                     txtRequisitos.Text = fila["requisitos"].ToString();
@@ -121,14 +121,15 @@ namespace proyecto_bases_datos
         private void btnCandidatos_Click(object sender, EventArgs e)
         {
             VariablesGlobales.nombre_empresa = txtEmpresa.Text;
-            VariablesGlobales.nombre_puesto  = txtPuesto.Text;
-            VariablesGlobales.idiomas        = txtIdiomas.Text;
-            VariablesGlobales.descripcion    = txtDescripcion.Text;
-            VariablesGlobales.requisitos     = txtRequisitos.Text;
+            VariablesGlobales.nombre_puesto = txtPuesto.Text;
+            VariablesGlobales.idiomas = txtIdiomas.Text;
+            VariablesGlobales.descripcion = txtDescripcion.Text;
+            VariablesGlobales.requisitos = txtRequisitos.Text;
 
             frmMostrarCandidatos frmCandidato = new frmMostrarCandidatos();
             frmCandidato.ShowDialog();
-            
+
         }
     }
 }
+

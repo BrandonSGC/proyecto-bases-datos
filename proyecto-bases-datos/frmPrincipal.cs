@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace proyecto_bases_datos
 {
-   
+
     public partial class frmPrincipal : Form
     {
-       
+
         public frmPrincipal()
         {
             InitializeComponent();
@@ -29,7 +29,7 @@ namespace proyecto_bases_datos
         private void btnNuevaVacante_Click(object sender, EventArgs e)
         {
             frmCrearVacante frmPantalla = new frmCrearVacante();
-            frmPantalla.Show(); 
+            frmPantalla.Show();
             this.Hide();
         }
 
@@ -43,11 +43,16 @@ namespace proyecto_bases_datos
         private void btnSeleccionCandidato_Click(object sender, EventArgs e)
         {
 
-        frmSeleccionCandidato frmPantallaCandidato = new frmSeleccionCandidato();
+            frmSeleccionCandidato frmPantallaCandidato = new frmSeleccionCandidato();
             //frmMostrarCandidatos frmPantalla = new frmMostrarCandidatos();
-            
+
             frmPantallaCandidato.Show();
             this.Hide();
+        }
+
+        private void frmPrincipal_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

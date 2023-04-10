@@ -107,13 +107,13 @@
             this.lblMenuPrincipal.Location = new System.Drawing.Point(272, 45);
             this.lblMenuPrincipal.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblMenuPrincipal.Name = "lblMenuPrincipal";
-            this.lblMenuPrincipal.Size = new System.Drawing.Size(164, 25);
+            this.lblMenuPrincipal.Size = new System.Drawing.Size(206, 32);
             this.lblMenuPrincipal.TabIndex = 10;
             this.lblMenuPrincipal.Text = "Menú Principal";
             // 
             // frmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(710, 499);
             this.Controls.Add(this.lblMenuPrincipal);
@@ -127,6 +127,7 @@
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menú Principal";
+            this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
