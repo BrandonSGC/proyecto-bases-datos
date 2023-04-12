@@ -71,9 +71,9 @@
             // 
             this.btnBuscarVacante.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscarVacante.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarVacante.Location = new System.Drawing.Point(469, 20);
+            this.btnBuscarVacante.Location = new System.Drawing.Point(469, 29);
             this.btnBuscarVacante.Name = "btnBuscarVacante";
-            this.btnBuscarVacante.Size = new System.Drawing.Size(159, 39);
+            this.btnBuscarVacante.Size = new System.Drawing.Size(159, 30);
             this.btnBuscarVacante.TabIndex = 22;
             this.btnBuscarVacante.Text = "Buscar";
             this.btnBuscarVacante.UseVisualStyleBackColor = true;
@@ -120,7 +120,7 @@
             this.txtSalario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSalario.Location = new System.Drawing.Point(267, 386);
             this.txtSalario.Name = "txtSalario";
-            this.txtSalario.Size = new System.Drawing.Size(124, 27);
+            this.txtSalario.Size = new System.Drawing.Size(161, 27);
             this.txtSalario.TabIndex = 32;
             // 
             // lblSalario
@@ -235,6 +235,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(710, 499);
             this.Controls.Add(this.txtIdiomas);
             this.Controls.Add(this.label4);
